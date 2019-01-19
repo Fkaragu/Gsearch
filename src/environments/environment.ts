@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-    apiUrl:"http://quotes.stormconsultancy.co.uk/random.json"
+    //apiUrl:"http://quotes.stormconsultancy.co.uk/random.json"
+    apiUrl:"https://api.github.com/users/Fkaragu"
 };
 
 /*

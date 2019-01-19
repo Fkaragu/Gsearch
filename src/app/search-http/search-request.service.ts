@@ -11,7 +11,7 @@ export class SearchRequestService {
   quote:Search;
 
   constructor(private http:HttpClient) {
-    this.quote=new Search("","");
+    this.quote=new Search("","","","");
   }
   searchRequest(){
 
@@ -19,18 +19,22 @@ export class SearchRequestService {
         quote:string;
         author:string
 
+        login:string
+        followers:string
+
+
     }
     let promise =new Promise((resolve,reject)=>{
         this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
 
-            this.quote.quote=response.quote
-            this.quote.author=response.author
+            this.quote.login=response.login
+            this.quote.followers=response.followers
 
             resolve()
         },
         error=>{
-                this.quote.quote="Never, never, never give up."
-                this.quote.author="winston churchill"
+                this.quote.login="Never, never, never give up."
+                this.quote.followers="winston churchill"
                 reject(error)
             }
         )

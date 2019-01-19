@@ -15,7 +15,6 @@ export class GheaderComponent implements OnInit {
   constructor(private searchService:SearchRequestService) {
 
   }
-
   ngOnInit() {
     this.searchService.searchRequest()
     this.quote=this.searchService.quote
