@@ -19,8 +19,12 @@ export class GheaderComponent implements OnInit {
         author:string
     }
     this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
-        this.quote= new Search(data.quote,data.author)
-    })
-  }
+            this.quote= new Search(data.quote,data.author)
 
-}
+        },err=>{
+            this.quote= new Search("Never, never, never give up.","winston churchill")
+            console.log("Error occured ")
+        })
+      }
+
+    }
