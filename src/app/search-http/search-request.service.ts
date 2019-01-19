@@ -8,36 +8,39 @@ import { Search } from '../search-class/search'
 })
 
 export class SearchRequestService {
-  quote:Search;
+  quote: Search;
 
-  constructor(private http:HttpClient) {
-    this.quote=new Search("","","","");
+  private username ='madskillz254';
+  private client_id ='xxxx';
+  private client_secret ='xxxx';
+
+
+  constructor(private http: HttpClient) {
+    this.quote = new Search("", "", "", "");
   }
-  searchRequest(){
+  searchRequest() {
 
-    interface ApiResponse{
-        quote:string;
-        author:string
+    interface ApiResponse {
+      quote: string;
+      author: string
 
-        login:string
-        followers:string
-
-
+      login: string
+      followers: string
     }
-    let promise =new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>(environment.apiUrl+this.username).toPromise().then(response => {
 
-            this.quote.login=response.login
-            this.quote.followers=response.followers
+        this.quote.login = response.login
+        this.quote.followers = response.followers
 
-            resolve()
-        },
-        error=>{
-                this.quote.login="Never, never, never give up."
-                this.quote.followers="winston churchill"
-                reject(error)
-            }
-        )
+        resolve()
+      },
+        error => {
+          this.quote.login = "Francis."
+          this.quote.followers = "0"
+          reject(error)
+        }
+      )
     })
 
     return promise
