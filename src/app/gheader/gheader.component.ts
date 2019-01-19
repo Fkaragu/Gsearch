@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Search } from '../search-class/search';
 
 @Component({
   selector: 'app-gheader',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gheader.component.css']
 })
 export class GheaderComponent implements OnInit {
+  quote:Search;
+  constructor(private http:HttpClient) {
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    interface ApiResponse{
+        quote:string;
+        author:string
+    }
+    this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
+        this.quote= new Quote(data.quote,data.author)
+    })
   }
 
 }
