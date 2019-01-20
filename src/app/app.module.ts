@@ -7,11 +7,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GheaderComponent } from './gheader/gheader.component';
+import { GdetailComponent } from './gdetail/gdetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GheaderComponent
+    GheaderComponent,
+    GdetailComponent
   ],
   imports: [
     BrowserModule,

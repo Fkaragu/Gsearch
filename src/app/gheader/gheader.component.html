@@ -2,7 +2,9 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">GitHub Search</a>
+      <div class="halign">
+        <p>GitHub Search</p>
+      </div>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -13,14 +15,20 @@
 </nav>
 <hr>
 
-
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset">
-      <blockquote class="text-center text-lg">
-        <p>{{quote.login}}</p>
-        <footer><cite>{{quote.followers}}</cite></footer>
-      </blockquote>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{quote.login}}</h3>
     </div>
-  <div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
