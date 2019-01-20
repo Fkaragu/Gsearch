@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Search } from '../search-class/search';
+import { Repos } from '../repos-class/repos';
 import { SearchRequestService } from '../search-http/search-request.service'
 
 
@@ -12,6 +13,7 @@ import { SearchRequestService } from '../search-http/search-request.service'
 })
 export class GdetailComponent implements OnInit {
   user: Search;
+  repo: Repos;
   constructor(private searchService: SearchRequestService) {
 
   }
