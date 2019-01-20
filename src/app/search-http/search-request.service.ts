@@ -19,13 +19,14 @@ export class SearchRequestService {
   private client_secret = '197f9a95f3e0ab104ef8553fac027fec98d2b626';
 
   constructor(private http: HttpClient) {
-    this.user = new Search("", "", "", "", "", "", "", "", new Date());
+    this.user = new Search("", "", "", "", "", "", "", "", new Date(),"");
     this.repo = new Repos("", "", "");
   }
 
   updateUserName (username:string){
     this.username = username;
   }
+
   searchRepos() {
 
     interface ApiResponse {
@@ -55,6 +56,7 @@ export class SearchRequestService {
     return promise
   }
 
+
   searchRequest() {
 
     interface ApiResponse {
@@ -68,7 +70,8 @@ export class SearchRequestService {
       name: string
       email: string
       created_at: Date
-      
+      repos_url: string
+
     }
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrl + this.username).toPromise().then(response => {
@@ -82,6 +85,9 @@ export class SearchRequestService {
         this.user.name = response.name
         this.user.email = response.email
         this.user.created_at = response.created_at
+        this.user.repos_url = response.repos_url
+
+
 
         resolve()
       },

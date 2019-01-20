@@ -14,6 +14,7 @@ import { SearchRequestService } from '../search-http/search-request.service'
 export class GdetailComponent implements OnInit {
   user: Search;
   repo: Repos;
+
   username: string;
   constructor(private searchService: SearchRequestService) {
 
@@ -33,10 +34,7 @@ export class GdetailComponent implements OnInit {
 
       this.searchService.searchRepos()
       this.repo = this.searchService.repo
-      console.log(this.repo);
-  }
-
-
+    }
 
   ngOnInit() {
   }
