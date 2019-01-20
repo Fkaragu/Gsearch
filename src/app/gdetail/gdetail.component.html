@@ -1,4 +1,17 @@
 <div class="container">
+  <div class="row align">
+    <div>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" name="username" (keyup.enter)="search()">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="container">
   <div class="panel panel-default">
     <div class="cont">
       <div class="panel-heading">
@@ -26,5 +39,16 @@
       </div>
     </div>
   </div>
-  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Repository</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <li>{{repo.description}}</li>
+    </div>
+  </div>
+</div>
+
 </div>

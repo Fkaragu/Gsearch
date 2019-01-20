@@ -20,9 +20,12 @@ export class SearchRequestService {
 
   constructor(private http: HttpClient) {
     this.user = new Search("", "", "", "", "", "", "", "", new Date());
-    this.repo = new Repos("", "", "");
+    this.repo = new Repos("sss", "fff", "ttt");
   }
 
+  updateUserName (username:string){
+    this.username = username;
+  }
   searchRepos() {
 
     interface ApiResponse {
@@ -32,7 +35,7 @@ export class SearchRequestService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + this.repoooo).toPromise().then(response => {
+      this.http.get<ApiResponse>(environment.apiUrl + this.username +'/repos').toPromise().then(response => {
 
         this.repo.name = response.name
         this.repo.html_url = response.html_url
@@ -41,8 +44,9 @@ export class SearchRequestService {
         resolve()
       },
         error => {
-          this.repo.name = "Francis."
-          this.repo.description = "None"
+          this.repo.name = " "
+          this.repo.html_url = " "
+          this.repo.description = " "
           reject(error)
         }
       )
@@ -88,7 +92,7 @@ export class SearchRequestService {
           this.user.following = "0"
           this.user.name = " "
           this.user.email = " "
-          
+
           reject(error)
         }
       )

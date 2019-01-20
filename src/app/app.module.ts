@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { GdetailchildComponent } from './gdetailchild/gdetailchild.component';
     AppRoutingModule,
     HttpClientModule,
     NgProgressModule,
-    NgProgressHttpModule
+    NgProgressHttpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
