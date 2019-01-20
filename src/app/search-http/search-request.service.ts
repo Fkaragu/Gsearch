@@ -80,8 +80,15 @@ export class SearchRequestService {
         resolve()
       },
         error => {
-          this.user.login = "Francis."
-          this.user.followers = "0"
+          this.user.login = " "
+          this.user.followers = " "
+          this.user.avatar_url = " "
+          this.user.public_repos = "0"
+          this.user.public_gists = "0"
+          this.user.following = "0"
+          this.user.name = " "
+          this.user.email = " "
+          
           reject(error)
         }
       )

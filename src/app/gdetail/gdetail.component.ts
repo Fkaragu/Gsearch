@@ -19,6 +19,10 @@ export class GdetailComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.searchService.searchRepos()
+    this.repo = this.searchService.repo
+
     this.searchService.searchRequest()
     this.user = this.searchService.user
   }
