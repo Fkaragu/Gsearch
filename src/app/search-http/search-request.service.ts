@@ -16,7 +16,7 @@ export class SearchRequestService {
 
 
   constructor(private http: HttpClient) {
-    this.quote = new Search("", "", "", "","","","","");
+    this.quote = new Search("", "", "", "","","","","","","",new Date());
   }
   searchRequest() {
 
@@ -30,6 +30,9 @@ export class SearchRequestService {
       public_repos:string
       public_gists:string
       following:string
+      name:string
+      email:string
+      created_at:Date
     }
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrl+this.username).toPromise().then(response => {
@@ -40,6 +43,9 @@ export class SearchRequestService {
         this.quote.public_repos = response.public_repos
         this.quote.public_gists = response.public_gists
         this.quote.following = response.following
+        this.quote.name = response.name
+        this.quote.email = response.email
+        this.quote.created_at = response.created_at
 
         resolve()
       },
