@@ -16,7 +16,7 @@ export class SearchRequestService {
 
 
   constructor(private http: HttpClient) {
-    this.user = new Search("", "", "", "","","","","","","",new Date());
+    this.user = new Search("","","","","","","","",new Date());
   }
   searchRequest() {
 
