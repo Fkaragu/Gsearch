@@ -8,7 +8,7 @@ import { Search } from '../search-class/search'
 })
 
 export class SearchRequestService {
-  quote: Search;
+  user: Search;
 
   private username ='Fkaragu';
   private client_id ='da54c87abfcbda77caed';
@@ -16,14 +16,11 @@ export class SearchRequestService {
 
 
   constructor(private http: HttpClient) {
-    this.quote = new Search("", "", "", "","","","","","","",new Date());
+    this.user = new Search("", "", "", "","","","","","","",new Date());
   }
   searchRequest() {
 
     interface ApiResponse {
-      quote: string;
-      author: string
-
       login:string
       followers:string
       avatar_url:string
@@ -37,21 +34,21 @@ export class SearchRequestService {
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrl+this.username).toPromise().then(response => {
 
-        this.quote.login = response.login
-        this.quote.followers = response.followers
-        this.quote.avatar_url = response.avatar_url
-        this.quote.public_repos = response.public_repos
-        this.quote.public_gists = response.public_gists
-        this.quote.following = response.following
-        this.quote.name = response.name
-        this.quote.email = response.email
-        this.quote.created_at = response.created_at
+        this.user.login = response.login
+        this.user.followers = response.followers
+        this.user.avatar_url = response.avatar_url
+        this.user.public_repos = response.public_repos
+        this.user.public_gists = response.public_gists
+        this.user.following = response.following
+        this.user.name = response.name
+        this.user.email = response.email
+        this.user.created_at = response.created_at
 
         resolve()
       },
         error => {
-          this.quote.login = "Francis."
-          this.quote.followers = "0"
+          this.user.login = "Francis."
+          this.user.followers = "0"
           reject(error)
         }
       )

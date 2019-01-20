@@ -11,14 +11,14 @@ import { SearchRequestService } from '../search-http/search-request.service'
   styleUrls: ['./gdetail.component.css']
 })
 export class GdetailComponent implements OnInit {
-  quote: Search;
+  user: Search;
   constructor(private searchService: SearchRequestService) {
 
   }
 
   ngOnInit() {
     this.searchService.searchRequest()
-    this.quote = this.searchService.quote
+    this.user = this.searchService.user
   }
 
 }

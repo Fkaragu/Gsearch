@@ -3,26 +3,26 @@
     <div class="cont">
 
       <div class="panel-heading">
-        <h3 class="panel-title">{{quote.login}}</h3>
+        <h3 class="panel-title">{{user.login}}</h3>
       </div>
 
       <div class="panel-body">
         <div class="row">
           <div class="col-md-4">
-            <img class="img-thumbnail github-avatar" src="{{quote.avatar_url}}" width="200" height="200">
+            <img class="img-thumbnail github-avatar" src="{{user.avatar_url}}" width="200" height="200">
           </div>
           <div class="col-md-8 fontz">
-            <span class="label label-default"> {{quote.public_repos}} Public Repos</span>
-            <span class="label label-primary"> {{quote.public_gists}} Public Gists</span>
-            <span class="label label-success"> {{quote.followers}} Followers</span>
-            <span class="label label-info"> {{quote.following}} Following</span>
+            <span class="label label-default"> {{user.public_repos}} Public Repos</span>
+            <span class="label label-primary"> {{user.public_gists}} Public Gists</span>
+            <span class="label label-success"> {{user.followers}} Followers</span>
+            <span class="label label-info"> {{user.following}} Following</span>
             <br>
             <br>
 
             <ul class="list-group">
-              <li class="list-group-item"><strong>Name: </strong>{{quote.name}}</li>
-              <li class="list-group-item"><strong>Email: </strong>{{quote.email}}</li>
-              <li class="list-group-item"><strong>Created on: </strong>{{quote.created_at|date}}</li>
+              <li class="list-group-item"><strong>Name: </strong>{{user.name}}</li>
+              <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
+              <li class="list-group-item"><strong>Created on: </strong>{{user.created_at|date}}</li>
             </ul>
 
           </div>
