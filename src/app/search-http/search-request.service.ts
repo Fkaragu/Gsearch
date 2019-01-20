@@ -10,9 +10,9 @@ import { Search } from '../search-class/search'
 export class SearchRequestService {
   quote: Search;
 
-  private username ='madskillz254';
-  private client_id ='xxxx';
-  private client_secret ='xxxx';
+  private username ='Fkaragu';
+  private client_id ='da54c87abfcbda77caed';
+  private client_secret ='197f9a95f3e0ab104ef8553fac027fec98d2b626';
 
 
   constructor(private http: HttpClient) {
