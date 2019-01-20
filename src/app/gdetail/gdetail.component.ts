@@ -18,16 +18,25 @@ export class GdetailComponent implements OnInit {
   constructor(private searchService: SearchRequestService) {
 
   }
-  search(){
+
+  searchUser(){
     this.searchService.updateUserName(this.username);
-      console.log(this.username);
-      
-      this.searchService.searchRepos()
-      this.repo = this.searchService.repo
+      //console.log(this.username);
 
       this.searchService.searchRequest()
       this.user = this.searchService.user
   }
+
+  searchRepos(){
+    this.searchService.updateUserName(this.username);
+      console.log(this.username);
+
+      this.searchService.searchRepos()
+      this.repo = this.searchService.repo
+      console.log(this.repo);
+  }
+
+
 
   ngOnInit() {
   }
