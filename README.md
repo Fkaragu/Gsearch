@@ -56,7 +56,7 @@ Here is a live working link https://fkaragu.github.io/Gsearch/
 |----               | :---:             |---: |
 | The program should handle:    | When it receives:     | It should return  |                             
 |:----:               | :---:             |:---: |
-| Accept text input             | Press Enter          | Search for the input details and return details pertaining that input              |
+| Accept text input             | Press Enter          | Search for the input details on github and return details pertaining that input              |
 
 ## Known Bugs
 
