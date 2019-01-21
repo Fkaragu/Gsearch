@@ -15,11 +15,11 @@ export class GdetailComponent implements OnInit {
   user: Search;
   repo: Repos;
   username: string;
-  
+  show: boolean = true;
+
 
   constructor(private searchService: SearchRequestService) {
   }
-
 
   searchUser(){
     this.searchService.updateUserName(this.username);
@@ -28,17 +28,18 @@ export class GdetailComponent implements OnInit {
       this.searchService.searchRequest()
       this.user = this.searchService.user
   }
-
-  searchRepos(){
-    this.searchService.updateUserName(this.username);
-      console.log("Francis here");
-
-      this.searchService.searchRepos()
-      this.repo = this.searchService.repo
-      console.log(this.repo);
-    }
-
-  ngOnInit() {
-  }
+ngOnInit(){
 
 }
+
+
+}
+
+// searchRepos(){
+//   this.searchService.updateUserName(this.username);
+//     console.log("Francis here");
+//
+//     this.searchService.searchRepos()
+//     this.repo = this.searchService.repo
+//     console.log(this.repo);
+//   }

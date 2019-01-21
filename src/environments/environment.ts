@@ -4,12 +4,9 @@
 
 export const environment = {
   production: false,
-    //apiUrl:"http://quotes.stormconsultancy.co.uk/random.json"
   apiUrl:"https://api.github.com/users/"
-//apiUrl:"https://api.github.com/?access_token =c61eea51193e891d27949b5659f7ac1658c40e51"
-//apiUrl:'https://api.github.com/users/Fkaragu?access_token=  c61eea51193e891d27949b5659f7ac1658c40e51'
-
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
@@ -18,4 +15,7 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
+ //apiUrl:"http://quotes.stormconsultancy.co.uk/random.json"
+//apiUrl:"https://api.github.com/?access_token =c61eea51193e891d27949b5659f7ac1658c40e51"
+//apiUrl:'https://api.github.com/users/Fkaragu?access_token=  c61eea51193e891d27949b5659f7ac1658c40e51'
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.

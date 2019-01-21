@@ -22,6 +22,8 @@ export class SearchRequestService {
   private ylink ="?tab=repositories";
   private pipe ="/";
 
+
+
   constructor(private http: HttpClient) {
     this.user = new Search("", "", "", "", "", "", "", "", new Date(),"","");
     this.repo = new Repos("", "", "");
@@ -29,35 +31,6 @@ export class SearchRequestService {
 
   updateUserName (username:string){
     this.username = username;
-  }
-
-  searchRepos() {
-
-    interface ApiResponse {
-      name: string
-      html_url: string
-      description: string
-    }
-
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + this.repoooo +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
-
-        this.repo.name = response.name
-        this.repo.html_url = response.html_url
-        this.repo.description = response.description
-
-        resolve()
-      },
-        error => {
-          this.repo.name = " "
-          this.repo.html_url = " "
-          this.repo.description = " "
-          reject(error)
-        }
-      )
-    })
-
-    return promise
   }
 
 
@@ -76,12 +49,9 @@ export class SearchRequestService {
       created_at: Date
       repos_url: string
       zlink : string
-
-
-
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
+      this.http.get<ApiResponse>('https://api.github.com/users/'+ this.username +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
 
         this.user.login = response.login
         this.user.followers = response.followers
@@ -94,8 +64,6 @@ export class SearchRequestService {
         this.user.created_at = response.created_at
         this.user.repos_url = response.repos_url
         this.user.zlink = this.xlink + this.pipe + this.username + this.ylink
-
-
 
         resolve()
       },
