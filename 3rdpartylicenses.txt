@@ -275,10 +275,10 @@ MIT
 @angular/router
 MIT
 
-@ngx-progressbar/core
+@angular/forms
 MIT
 
-@angular/forms
+@ngx-progressbar/core
 MIT
 
 @ngx-progressbar/http
