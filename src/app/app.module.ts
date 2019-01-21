@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { GheaderComponent } from './gheader/gheader.component';
 import { GdetailComponent } from './gdetail/gdetail.component';
 import { GdetailchildComponent } from './gdetailchild/gdetailchild.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GheaderComponent,
     GdetailComponent,
-    GdetailchildComponent
+    GdetailchildComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
