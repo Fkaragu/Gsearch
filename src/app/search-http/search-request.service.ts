@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, enableProdMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Search } from '../search-class/search';
 import { Repos } from '../repos-class/repos';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,12 @@ export class SearchRequestService {
   private username = 'Fkaragu';
   private client_id = 'da54c87abfcbda77caed';
   private client_secret = '197f9a95f3e0ab104ef8553fac027fec98d2b626';
+  private xlink ="https://github.com";
+  private ylink ="?tab=repositories";
+  private pipe ="/";
 
   constructor(private http: HttpClient) {
-    this.user = new Search("", "", "", "", "", "", "", "", new Date(),"");
+    this.user = new Search("", "", "", "", "", "", "", "", new Date(),"","");
     this.repo = new Repos("", "", "");
   }
 
@@ -36,7 +40,7 @@ export class SearchRequestService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + this.repoooo).toPromise().then(response => {
+      this.http.get<ApiResponse>(environment.apiUrl + this.username + this.repoooo +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
 
         this.repo.name = response.name
         this.repo.html_url = response.html_url
@@ -71,10 +75,13 @@ export class SearchRequestService {
       email: string
       created_at: Date
       repos_url: string
+      zlink : string
+
+
 
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username).toPromise().then(response => {
+      this.http.get<ApiResponse>(environment.apiUrl + this.username +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
 
         this.user.login = response.login
         this.user.followers = response.followers
@@ -86,6 +93,7 @@ export class SearchRequestService {
         this.user.email = response.email
         this.user.created_at = response.created_at
         this.user.repos_url = response.repos_url
+        this.user.zlink = this.xlink + this.pipe + this.username + this.ylink
 
 
 

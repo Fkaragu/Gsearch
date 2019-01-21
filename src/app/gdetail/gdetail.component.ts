@@ -14,15 +14,16 @@ import { SearchRequestService } from '../search-http/search-request.service'
 export class GdetailComponent implements OnInit {
   user: Search;
   repo: Repos;
-
   username: string;
-  constructor(private searchService: SearchRequestService) {
+  
 
+  constructor(private searchService: SearchRequestService) {
   }
+
 
   searchUser(){
     this.searchService.updateUserName(this.username);
-      //console.log(this.username);
+      console.log(this.username);
 
       this.searchService.searchRequest()
       this.user = this.searchService.user
@@ -30,10 +31,11 @@ export class GdetailComponent implements OnInit {
 
   searchRepos(){
     this.searchService.updateUserName(this.username);
-      console.log(this.username);
+      console.log("Francis here");
 
       this.searchService.searchRepos()
       this.repo = this.searchService.repo
+      console.log(this.repo);
     }
 
   ngOnInit() {

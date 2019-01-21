@@ -3,5 +3,6 @@ export class Search {
     public avatar_url:string,public public_repos:string,
     public public_gists:string,public following:string,
     public name:string,public email:string,
-    public created_at:Date,public repos_url:string){}
+    public created_at:Date,public repos_url:string,
+    public zlink:string){}
 }
