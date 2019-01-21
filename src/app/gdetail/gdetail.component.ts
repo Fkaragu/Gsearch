@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Search } from '../search-class/search';
 import { Repos } from '../repos-class/repos';
 import { SearchRequestService } from '../search-http/search-request.service'
+import { Pipe, PipeTransform } from '@angular/core';
 
 
 @Component({

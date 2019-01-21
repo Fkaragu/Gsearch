@@ -39,7 +39,7 @@
                       <ul class="list-group">
                         <li class="list-group-item"><strong>Name: </strong>{{user.name}}</li>
                         <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
-                        <li class="list-group-item"><strong>Created on: </strong>{{user.created_at|date}}</li>
+                        <li class="list-group-item"><strong>Created on: </strong>{{user.created_at|date:'yyyy-MM-dd'}} ~ {{user.created_at|dateCount}} days have passed</li>
                       </ul>
                     </div>
 
